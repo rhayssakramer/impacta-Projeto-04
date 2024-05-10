@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\impacta-Projeto04.props" />
+</Project>
