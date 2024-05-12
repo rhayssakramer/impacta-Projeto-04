@@ -40,6 +40,6 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-primary mt-2" style="text-decoration: none;" asp-action="Edit" asp-route-id="@Model.TarefaID, @Model.Nome, @Model.Status, @Model.DataInicio, @Model.DataConclusao">Editar</a>
-    <a class="btn btn-light mt-2" style="text-decoration: none;" asp-action="Index">Voltar</a>
+    <a asp-action="Edit" asp-route-id="@Model.TarefaID" class="btn btn-primary mt-2" style="text-decoration: none;">Editar</a>
+    <a asp-action="Index" class="btn btn-light mt-2" style="text-decoration: none;">Voltar</a>
 </div>

@@ -1,6 +1,7 @@
 ﻿using impacta_Projeto04.Models;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace impacta_Projeto04.Controllers
 {
     public class TarefaController : Controller
@@ -28,18 +29,23 @@ namespace impacta_Projeto04.Controllers
         [HttpPost]
         public IActionResult Create(Tarefa tarefa)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                tarefa.TarefaID = _tarefas.Count() > 0 ? _tarefas.Max(t => t.TarefaID + 1) : 1;
+                tarefa.TarefaID = _tarefas.Count > 0 ? _tarefas.Max(t => t.TarefaID) + 1 : 1;
                 _tarefas.Add(tarefa);
             }
             return RedirectToAction("Index");
         }
 
         //READ
-        public IActionResult Details() 
+        public IActionResult Details(int id) 
         { 
-            return View(); 
+            var tarefas = _tarefas.FirstOrDefault(t => t.TarefaID == id);
+            if(tarefas == null)
+            {
+                return NotFound();
+            }
+            return View(tarefas); 
         }
 
         //EDIT
@@ -56,7 +62,7 @@ namespace impacta_Projeto04.Controllers
         [HttpPost]
         public IActionResult Edit(Tarefa tarefa) 
         {
-            if (!ModelState.IsValid) 
+            if (ModelState.IsValid) 
             { 
                 var TarefaExistente = _tarefas.FirstOrDefault(t => t.TarefaID == tarefa.TarefaID);
                 if (TarefaExistente != null) 
@@ -72,13 +78,6 @@ namespace impacta_Projeto04.Controllers
         }
 
         //DELET
-        public IActionResult Delete(int id) 
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ActionName("Delet")]
         public IActionResult Delet(int id)
         {
             var tarefa = _tarefas.FirstOrDefault(t => t.TarefaID == id);
@@ -88,6 +87,16 @@ namespace impacta_Projeto04.Controllers
             }
             _tarefas.Remove(tarefa);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Iniciar() 
+        { 
+            return View(_tarefas); 
+        }
+
+        public IActionResult Concluido() 
+        { 
+            return View(_tarefas);
         }
     }
 }

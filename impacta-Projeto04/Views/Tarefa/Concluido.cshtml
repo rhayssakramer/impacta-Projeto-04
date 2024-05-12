@@ -1,0 +1,64 @@
+﻿@model List<Tarefa>
+@{
+    ViewData["Title"] = "Lista de Tarefas";
+}
+<h1 class="mt-3">Tarefas Concluídas</h1>
+<hr />
+<div>
+    <table class="table table-striped table-light">
+        <thead style="white-space: nowrap;">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Data de Início
+                </th>
+                <th>
+                    Data de Conclusão
+                </th>
+                <th>
+                    Ações
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tarefa in Model)
+            {
+                if (tarefa.Status == "Concluido")
+                {
+                    <tr>
+                        <td>
+                            @tarefa.TarefaID
+                        </td>
+                        <td>
+                            @tarefa.Nome
+                        </td>
+                        <td>
+                            @tarefa.Status
+                        </td>
+                        <td>
+                            @tarefa.DataInicio
+                        </td>
+                        <td>
+                            @tarefa.DataConclusao
+                        </td>
+                        <td>
+                            <div class="row">
+                                <a asp-action="Edit" asp-route-id="@tarefa.TarefaID" class="btn btn-primary mb-1 mx-1" style="width: 80px">Editar</a>
+                                <a asp-action="Details" asp-route-id="@tarefa.TarefaID" class="btn btn-warning mb-1 mx-1" style="width: 80px">Detalhes</a>
+                                <a asp-action="Delet" asp-route-id="@tarefa.TarefaID" class="btn btn-danger mb-1 mx-1" style="width: 80px">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

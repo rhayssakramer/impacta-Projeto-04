@@ -1,4 +1,4 @@
-﻿@model impacta_Projeto04.Models.Tarefa
+﻿@model Tarefa
 
 @{
     ViewData["Title"] = "Exlcuir Tarefas";
@@ -6,42 +6,42 @@
 <h1 class="mt-3">Excluir Tarefas</h1>
 <hr />
 <div id="excluir" class="container">
-    <h4>Tem certeza que deseja excluir esse cliente?</h4>
+    <h4>Tem certeza que deseja excluir essa tarefa?</h4>
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TarefaID)
+            ID
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TarefaID)
+            @Model.TarefaID
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
+            Nome:
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
+            @Model.Nome)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
+            Status:
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Status)
+            @Model.Status)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataInicio)
+            Data de Início:
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataInicio)
+            @Model.DataInicio)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataConclusao)
+            Data de Conclusão:
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataConclusao)
+            @Model.DataConclusao
         </dd>
     </dl>
     <form id="formExcluir" asp-action="Delete">
         <input type="hidden" asp-for="TarefaID" />
-        <input type="submit" value="Excluir" class="btn btn-danger" />
+        <button type="submit" class="btn btn-danger">Excluir</button>
         <a class="btn btn-light" asp-action="Index">Voltar</a>
     </form>
 </div>

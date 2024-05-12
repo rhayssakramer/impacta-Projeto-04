@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/r.bezerra.de.melo/source/repos/impacta-Projeto04/impacta-Projeto04/Views/Tarefa/Concluido.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhXENvbmNsdWlkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/r.bezerra.de.melo/source/repos/impacta-Projeto04/impacta-Projeto04/Views/Tarefa/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/r.bezerra.de.melo/source/repos/impacta-Projeto04/impacta-Projeto04/Views/Tarefa/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/r.bezerra.de.melo/source/repos/impacta-Projeto04/impacta-Projeto04/Views/Tarefa/Iniciar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhXEluaWNpYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/r.bezerra.de.melo/source/repos/impacta-Projeto04/impacta-Projeto04/Views/_ViewImports.cshtml]
