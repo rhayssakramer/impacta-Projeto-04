@@ -1,22 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace impacta_Projeto04.Models
 {
     public class Tarefa
     {
-        [Display(Name = "ID")]
         public int TarefaID { get; set; }
-
-        [Display(Name = "Tarefa")]
+        [Required]
         public string? Nome { get; set; }
-
-        [Display(Name = "Status")]
         public string? Status { get; set; }
-
-        [Display(Name = "Data de Início")]
+     
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataInicio { get; set; } = DateTime.Now;
 
-        [Display(Name = "Data de Conclusão")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataConclusao { get; set; }
     }
 }

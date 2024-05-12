@@ -6,11 +6,11 @@ namespace impacta_Projeto04.Controllers
 {
     public class TarefaController : Controller
     {
-        private static List<Tarefa> _tarefas = new List<Tarefa>()
+        private static List<Tarefa> _tarefas = new List<Tarefa>
         {
             new Tarefa { TarefaID = 1, Nome = "Tarefa 1", Status = "Iniciar", DataInicio = DateTime.Now },
             new Tarefa { TarefaID = 2, Nome = "Tarefa 2", Status = "Iniciar", DataInicio = DateTime.Now },
-            new Tarefa { TarefaID = 3, Nome = "Tarefa 3", Status = "Concluido", DataInicio = DateTime.Now.AddDays(-3), DataConclusao = DateTime.Now }
+            new Tarefa { TarefaID = 3, Nome = "Tarefa 3", Status = "Concluído", DataInicio = DateTime.Now, DataConclusao = DateTime.Now }
 
         };
 
@@ -69,8 +69,13 @@ namespace impacta_Projeto04.Controllers
                 {
                     TarefaExistente.Nome = tarefa.Nome;
                     TarefaExistente.Status = tarefa.Status;
-                    TarefaExistente.DataInicio = tarefa.DataInicio;
-                    TarefaExistente.DataConclusao = tarefa.DataConclusao;
+                    if (tarefa.Status.Equals("Concluído", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        TarefaExistente.DataConclusao = DateTime.Now;
+                    }else
+                    {
+                        TarefaExistente.DataConclusao = null;
+                    }
                 }
                 return RedirectToAction("Index");
             }
@@ -82,9 +87,9 @@ namespace impacta_Projeto04.Controllers
         {
             var tarefa = _tarefas.FirstOrDefault(t => t.TarefaID == id);
             if(tarefa == null)
-            {
+            
                 return NotFound();
-            }
+            
             _tarefas.Remove(tarefa);
             return RedirectToAction("Index");
         }

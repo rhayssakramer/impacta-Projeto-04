@@ -7,7 +7,7 @@
 <hr />
 <form asp-action="Edit" method="post">
     <div class="row justify-content-center align-items-center">
-        <input type="hidden" asp-for="Nome" />
+        <input type="hidden" asp-for="TarefaID" />
         <div class="col">
             <div class="col-md-12">
                 <label asp-for="Nome" class="control-label"></label>
@@ -22,18 +22,6 @@
                     <option>Concluído</option>
                 </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col">
-            <div class="col-md-12">
-                <label asp-for="DataInicio" class="control-label"></label>
-                <input asp-for="DataInicio" class="form-control" />
-                <span asp-validation-for="DataInicio" class="text-danger"></span>
-            </div>
-            <div class="col-md-12 mt-1">
-                <label asp-for="DataConclusao" class="control-label"></label>
-                <input asp-for="DataConclusao" class="form-control" />
-                <span asp-validation-for="DataConclusao" class="text-danger"></span>
             </div>
         </div>
     </div>
